@@ -4,19 +4,45 @@ Este projeto implementa um sistema de compressão e descompressão de arquivos d
 
 ## Estrutura do Projeto
 
-/archives 
+/archives \
+
+
     ├── entrada.txt # Arquivo de entrada (texto original a ser compactado) 
+
+
     ├── saida.huf # Arquivo comprimido gerado 
+
+
 /features 
-    ├── compress.py # Função para compactar texto 
+
+
+    ├── compress.py # Função para compactar texto
+
+
     ├── decompress.py # Função para descompactar texto 
+
+
 /functions 
+
+
     ├── file_operations.py # Funções de leitura, escrita e manipulação de arquivos 
+
+
     ├── frequency_count.py # Função para contar frequências de caracteres 
+
+
     ├── huffman_codes.py # Funções para geração de códigos e decodificação 
+
+
     ├── huffman_tree_operations.py # Serialização e desserialização da árvore de Huffman
+
+
 /implementations 
+
+
     ├── huffman_tree.py # Construção da árvore de Huffman
+
+    
 index.py # Script principal com menu interativo
 
 ## Requisitos
