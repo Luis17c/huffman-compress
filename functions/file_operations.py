@@ -11,12 +11,23 @@ def write_file(file_path, content):
         f.write(content)
 
 def save_huffman_file(tree, encoded_text, file_path):
-    with open(file_path, 'w', encoding='utf-8') as f:
-        json.dump({"tree": serialize_huffman_tree(tree), "data": encoded_text}, f)
+    with open(file_path, 'wb') as f:
+        tree_data = serialize_huffman_tree(tree)
+        tree_bytes = json.dumps(tree_data).encode('utf-8')
+
+        f.write(len(tree_bytes).to_bytes(4, 'big'))
+        f.write(tree_bytes)
+
+        encoded_bytes = int(encoded_text, 2).to_bytes((len(encoded_text) + 7) // 8, 'big')
+        f.write(encoded_bytes)
 
 def load_huffman_file(file_path):
-    with open(file_path, 'r', encoding='utf-8') as f:
-        huf_data = json.load(f)
-    tree = deserialize_huffman_tree(huf_data['tree'])
-    encoded_text = huf_data['data']
-    return tree, encoded_text
+    with open(file_path, 'rb') as f:
+        tree_size = int.from_bytes(f.read(4), 'big')
+
+        tree_bytes = f.read(tree_size)
+        tree_data = json.loads(tree_bytes.decode('utf-8'))
+        tree = deserialize_huffman_tree(tree_data)
+
+        encoded_bits = bin(int.from_bytes(f.read(), 'big'))[2:]
+        return tree, encoded_bits
