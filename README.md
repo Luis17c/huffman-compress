@@ -66,14 +66,7 @@ Reduz o tamanho de arquivos de texto utilizando a codificação de Huffman.
 ### Descompressão
 Restaura o texto original a partir do arquivo compactado.
 
-### Modularidade
-Código organizado em funções e módulos, facilitando a manutenção.
-
-### Limitações
-A descompressão requer o arquivo saida.huf contendo a árvore de Huffman embutida.
-A compactação e descompactação sobrescrevem os arquivos existentes sem confirmação.
-
-### Estrutura da Árvore de Huffman no Arquivo Compactado
+## Estrutura da Árvore de Huffman no Arquivo Compactado
 O arquivo .huf contém:
 Árvore de Huffman Serializada: Utilizada para decodificar o texto compactado.
 Texto Compactado: Representação binária comprimida do texto original.
