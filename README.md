@@ -24,7 +24,7 @@ Este projeto implementa um sistema de compressão e descompressão de arquivos d
 
     ├── huffman_codes.py # Funções para geração de códigos e decodificação 
 
-    ├── huffman_tree_operations.py # Serialização e desserialização da árvore de Huffman
+    ├── huffman_tree_operations.py # Operações com árvore de Huffman
 
 /implementations 
 
