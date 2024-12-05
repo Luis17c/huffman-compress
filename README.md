@@ -2,6 +2,12 @@
 
 Este projeto implementa um sistema de compressão e descompressão de arquivos de texto utilizando o algoritmo de Huffman. Ele permite compactar textos para reduzir seu tamanho e, posteriormente, descompactá-los para recuperar o conteúdo original.
 
+## Observações Adicionais
+- O projeto oferece duas opções de uso: CLI e GUI, acessíveis pelos scripts `index.py` e `interface.py`.
+- Os arquivos de entrada e saída são manipulados nos diretórios:
+  - Entrada: `archives/entrada.txt`
+  - Saída: `archives/saida.huf`
+  
 ## Estrutura do Projeto
 
 **/archives**
@@ -90,8 +96,3 @@ O arquivo `.huf` contém:
 1. **Árvore de Huffman Serializada**: Utilizada para decodificar o texto compactado.
 2. **Texto Compactado**: Representação binária comprimida do texto original.
 
-## Observações Adicionais
-- O projeto oferece duas opções de uso: CLI e GUI, acessíveis pelos scripts `index.py` e `interface.py`.
-- Os arquivos de entrada e saída são manipulados nos diretórios:
-  - Entrada: `archives/entrada.txt`
-  - Saída: `archives/saida.huf`
