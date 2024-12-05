@@ -4,37 +4,36 @@ Este projeto implementa um sistema de compressão e descompressão de arquivos d
 
 ## Estrutura do Projeto
 
-/archives
+**/archives**
 
-    ├── entrada.txt # Arquivo de entrada (texto original a ser compactado) 
+- `entrada.txt`: Arquivo de entrada (texto original a ser compactado)
+- `saida.huf`: Arquivo comprimido gerado
 
-    ├── saida.huf # Arquivo comprimido gerado 
+**/features**
 
-/features 
+- `compress.py`: Função para compactar texto
+- `decompress.py`: Função para descompactar texto
 
-    ├── compress.py # Função para compactar texto
+**/functions**
 
-    ├── decompress.py # Função para descompactar texto 
+- `file_operations.py`: Funções de leitura, escrita e manipulação de arquivos
+- `frequency_count.py`: Função para contar frequências de caracteres
+- `huffman_codes.py`: Funções para geração de códigos e decodificação
+- `huffman_tree_operations.py`: Operações com árvore de Huffman
 
-/functions 
+**/implementations**
 
-    ├── file_operations.py # Funções de leitura, escrita e manipulação de arquivos 
+- `huffman_tree.py`: Construção da árvore de Huffman
 
-    ├── frequency_count.py # Função para contar frequências de caracteres 
+**Arquivos principais**
 
-    ├── huffman_codes.py # Funções para geração de códigos e decodificação 
-
-    ├── huffman_tree_operations.py # Operações com árvore de Huffman
-
-/implementations 
-
-    ├── huffman_tree.py # Construção da árvore de Huffman
-
-index.py # Script principal com menu interativo
+- `index.py`: Script principal com menu interativo (CLI)
+- `interface.py`: Interface gráfica para compressão e descompressão (GUI)
 
 ## Requisitos
 
 - **Python 3.6+**
+- **Bibliotecas utilizadas**: Nenhuma biblioteca externa é necessária. Apenas as bibliotecas padrão do Python são utilizadas.
 
 ## Como Usar
 
@@ -43,30 +42,49 @@ Certifique-se de que o diretório contém a estrutura de arquivos listada acima 
 
 ### 2. Compactar um Texto
 1. O texto que deseja compactar pode ser editado no arquivo `archives/entrada.txt`.
-
-2. Execute o comando:
-   ```bash
-   python index.py
-   ```
-3. Selecione 1 no menu interativo para compactar
+2. Para compactar, utilize uma das opções:
+   - **Interface CLI**: Execute o comando:
+     ```bash
+     python index.py
+     ```
+     No menu interativo, selecione `1` para compactar.
+   - **Interface GUI**: Execute o comando:
+     ```bash
+     python interface.py
+     ```
+     Siga as instruções da interface gráfica.
 
 ### 3. Descompactar um Texto
-1. O texto que deseja descompactar pode ser editado no arquivo `archives/saida.huf`, deve contar a árvore de Huffman no arquivo.
-
-2. Execute o comando:
-   ```bash
-   python index.py
-   ```
-3. Selecione 2 no menu interativo para descompactar
+1. O texto que deseja descompactar deve estar no arquivo `archives/saida.huf`, incluindo a árvore de Huffman no formato serializado.
+2. Para descompactar, utilize uma das opções:
+   - **Interface CLI**: Execute o comando:
+     ```bash
+     python index.py
+     ```
+     No menu interativo, selecione `2` para descompactar.
+   - **Interface GUI**: Execute o comando:
+     ```bash
+     python interface.py
+     ```
+     Siga as instruções da interface gráfica.
 
 ## Funcionalidades
+
 ### Compressão
-Reduz o tamanho de arquivos de texto utilizando a codificação de Huffman.
+- Reduz o tamanho de arquivos de texto utilizando a codificação de Huffman.
+- Gera um arquivo `.huf` contendo a árvore serializada e o texto compactado.
 
 ### Descompressão
-Restaura o texto original a partir do arquivo compactado.
+- Restaura o texto original a partir do arquivo `.huf` compactado.
+- Recria o texto original no arquivo `archives/entrada.txt`.
 
 ## Estrutura da Árvore de Huffman no Arquivo Compactado
-O arquivo .huf contém:
-Árvore de Huffman Serializada: Utilizada para decodificar o texto compactado.
-Texto Compactado: Representação binária comprimida do texto original.
+O arquivo `.huf` contém:
+1. **Árvore de Huffman Serializada**: Utilizada para decodificar o texto compactado.
+2. **Texto Compactado**: Representação binária comprimida do texto original.
+
+## Observações Adicionais
+- O projeto oferece duas opções de uso: CLI e GUI, acessíveis pelos scripts `index.py` e `interface.py`.
+- Os arquivos de entrada e saída são manipulados nos diretórios:
+  - Entrada: `archives/entrada.txt`
+  - Saída: `archives/saida.huf`
