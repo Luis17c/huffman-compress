@@ -33,7 +33,14 @@ Este projeto implementa um sistema de compressão e descompressão de arquivos d
 ## Requisitos
 
 - **Python 3.6+**
-- **Bibliotecas utilizadas**: Nenhuma biblioteca externa é necessária. Apenas as bibliotecas padrão do Python são utilizadas.
+- **Bibliotecas utilizadas**:
+  - Para a **interface CLI (index.py)**: Nenhuma biblioteca externa é necessária. Apenas as bibliotecas padrão do Python são utilizadas.
+  - Para a **interface GUI (interface.py)**: As seguintes bibliotecas são necessárias:
+    - `tkinter` (padrão no Python)
+    - `subprocess` (padrão no Python)
+    - `sys` (padrão no Python)
+    - `os` (padrão no Python)
+  - Caso alguma biblioteca esteja faltando, o script **interface.py** realiza a instalação automática.
 
 ## Como Usar
 
